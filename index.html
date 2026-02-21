@@ -731,6 +731,8 @@
             </div>
           </div>
 
+         
+
           <h3 class="mt-28">Follow Me</h3>
           <div class="follow">
             <a class="social" target="_blank" rel="noreferrer"
@@ -742,6 +744,7 @@
             <a class="social" href="https://wa.me/201114182043" target="_blank" rel="noopener">
               <i class="fa-brands fa-whatsapp"></i>
             </a>
+          
 
           </div>
         </div>
@@ -751,7 +754,7 @@
             <h3>Quick Message</h3>
             <p class="muted">This is a simple UI block — connect it later to EmailJS / Formspree / backend.</p>
 
-            <form onsubmit="event.preventDefault(); alert('Hook this form later to your backend');">
+            <!-- <form onsubmit="event.preventDefault(); alert('Hook this form later to your backend');">
               <label>
                 <span>Your Name</span>
                 <input type="text" placeholder="Your name" required>
@@ -765,6 +768,27 @@
                 <textarea rows="5" placeholder="Write your message..." required></textarea>
               </label>
 
+              <button class="btn btn-primary w-100" type="submit">
+                <i class="fa-solid fa-paper-plane"></i> Send
+              </button>
+            </form> -->
+            <form action="https://formsubmit.co/moamedsobhy7@gmail.com" method="POST">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_subject" value="New message from portfolio">
+            
+              <label>
+                <span>Your Name</span>
+                <input type="text" name="name" placeholder="Your name" required>
+              </label>
+              <label>
+                <span>Your Email</span>
+                <input type="email" name="email" placeholder="your@email.com" required>
+              </label>
+              <label>
+                <span>Message</span>
+                <textarea name="message" rows="5" placeholder="Write your message..." required></textarea>
+              </label>
+            
               <button class="btn btn-primary w-100" type="submit">
                 <i class="fa-solid fa-paper-plane"></i> Send
               </button>
@@ -792,3 +816,11 @@
 </body>
 
 </html>
+
+
+
+<!-- After Any Changes Must Push in Github
+git add .
+git commit -m "Update portfolio content"
+git push -->
+<!-- https://mohamedsob7y.github.io/portfolio/ -->
