@@ -369,8 +369,27 @@ body.light .carousel-btn{border:1px solid rgba(15,26,45,.14); background: rgba(1
   flex: 0 0 100%;
   overflow:hidden;
 }
-.project-img{height: 280px; background: rgba(255,255,255,.06);}
-.project-img img{width:100%; height:100%; object-fit:cover; display:block;}
+/* .project-img{height: 280px; background: rgba(255,255,255,.06);}
+.project-img img{width:100%; height:100%; object-fit:cover; display:block;} */
+.project-img{
+  height: 360px;
+  background: #071426;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 8px;
+}
+
+
+
+.project-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
 .project-body{padding: 22px 24px;}
 .project-body h3{margin:0 0 8px; font-size:24px}
 .project-body p{margin:0 0 14px; color: var(--muted); line-height:1.7}
