@@ -956,3 +956,108 @@ body.light .mini-link{
   background:rgba(17,143,139,.09);
   border-color:rgba(17,143,139,.22);
 }
+
+
+
+
+
+/*=========================================================================*/
+/* =========================
+   Mobile Projects Fix
+========================= */
+
+@media (max-width: 600px) {
+
+  #projects .container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  /* Card */
+  .project-card {
+    width: 100%;
+    border-radius: 18px;
+  }
+
+  /* Image Area */
+  .project-img {
+    width: 100%;
+    height: 190px;
+    padding: 0;
+    background: #071426;
+    overflow: hidden;
+  }
+
+  .project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  /* Content */
+  .project-body {
+    padding: 18px 16px 20px;
+  }
+
+  .project-body h3 {
+    font-size: 24px;
+    line-height: 1.25;
+    margin-bottom: 10px;
+  }
+
+  .project-body p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+
+  /* Technologies */
+  .project-body .chips {
+    gap: 8px;
+  }
+
+  .project-body .chip {
+    font-size: 12px;
+    padding: 7px 10px;
+  }
+
+  /* Project buttons */
+  .project-links {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+  }
+
+  .project-links .mini-link {
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+
+  /* Carousel arrows */
+  #projects .carousel-btn {
+    width: 42px;
+    height: 42px;
+    top: 95px;
+    transform: none;
+  }
+
+  #projects .carousel-btn:hover {
+    transform: scale(1.05);
+  }
+
+  #projects .carousel-btn.left {
+    left: 6px;
+  }
+
+  #projects .carousel-btn.right {
+    right: 6px;
+  }
+
+  /* Dots */
+  #projects .dots {
+    margin-top: 12px;
+  }
+}
