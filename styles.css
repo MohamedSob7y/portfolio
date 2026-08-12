@@ -369,26 +369,7 @@ body.light .carousel-btn{border:1px solid rgba(15,26,45,.14); background: rgba(1
   flex: 0 0 100%;
   overflow:hidden;
 }
-/* .project-img{height: 280px; background: rgba(255,255,255,.06);}
-.project-img img{width:100%; height:100%; object-fit:cover; display:block;} */
-.project-img{
-  height: 360px;
-  background: #071426;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  padding: 8px;
-}
 
-
-
-.project-img img{
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
 
 .project-body{padding: 22px 24px;}
 .project-body h3{margin:0 0 8px; font-size:24px}
@@ -611,7 +592,6 @@ body.light .footer{border-top:1px solid rgba(15,26,45,.10); background: rgba(245
 @media (max-width: 520px){
   .hero-inner{padding: 44px 18px}
   .section-title{font-size:32px}
-  .project-img{height:220px}
 }
 .grad-6 {
   background: linear-gradient(135deg, #f59e0b, #f97316); /* أصفر → برتقالي */
@@ -958,106 +938,316 @@ body.light .mini-link{
 }
 
 
+/* ==========================================================================
+   PROJECTS — FINAL RESPONSIVE STYLES
+   ========================================================================== */
 
+/* Desktop project card */
+.project-card{
+  width:min(820px, 100%);
+  flex:0 0 100%;
+  overflow:hidden;
+}
 
+/*
+  All project banners should be exported as 1800x600 (3:1).
+  This keeps them full-width with no crop and no side gaps.
+*/
+.project-img{
+  width:100%;
+  aspect-ratio:3 / 1;
+  height:auto;
+  overflow:hidden;
+  padding:0;
+  margin:0;
+  background:#071426;
+}
 
-/*=========================================================================*/
-/* =========================
-   Mobile Projects Fix
-========================= */
+.project-img img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center;
+}
 
-@media (max-width: 600px) {
+/* Project text/content */
+.project-body{
+  padding:22px 24px;
+}
 
-  #projects .container {
-    padding-left: 14px;
-    padding-right: 14px;
+.project-body h3{
+  margin:0 0 8px;
+  font-size:24px;
+  line-height:1.3;
+}
+
+.project-body p{
+  margin:0 0 14px;
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.project-links{
+  margin-top:12px;
+}
+
+/* Tablet */
+@media (max-width:760px){
+
+  #projects .container{
+    padding-left:16px;
+    padding-right:16px;
   }
 
-  /* Card */
-  .project-card {
-    width: 100%;
-    border-radius: 18px;
+  .project-body{
+    padding:20px 20px 22px;
   }
 
-  /* Image Area */
-  .project-img {
-    width: 100%;
-    height: 190px;
-    padding: 0;
-    background: #071426;
-    overflow: hidden;
+  .project-body h3{
+    font-size:23px;
   }
 
-  .project-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
+  .project-body p{
+    font-size:15px;
+  }
+}
+
+/* Mobile */
+@media (max-width:600px){
+
+  #projects .container{
+    padding-left:14px;
+    padding-right:14px;
   }
 
-  /* Content */
-  .project-body {
-    padding: 18px 16px 20px;
+  .project-card{
+    width:100%;
+    border-radius:18px;
+    overflow:hidden;
   }
 
-  .project-body h3 {
-    font-size: 24px;
-    line-height: 1.25;
-    margin-bottom: 10px;
+  .project-img{
+    width:100%;
+    height:auto;
+    aspect-ratio:3 / 1;
+    padding:0;
+    margin:0;
+    overflow:hidden;
+    background:#071426;
   }
 
-  .project-body p {
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 14px;
+  .project-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    display:block;
   }
 
-  /* Technologies */
-  .project-body .chips {
-    gap: 8px;
+  .project-body{
+    padding:20px 18px 22px;
   }
 
-  .project-body .chip {
-    font-size: 12px;
-    padding: 7px 10px;
+  .project-body h3{
+    margin:0 0 10px;
+    font-size:23px;
+    line-height:1.25;
   }
 
-  /* Project buttons */
-  .project-links {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-top: 14px;
+  .project-body p{
+    margin:0 0 16px;
+    font-size:15px;
+    line-height:1.6;
   }
 
-  .project-links .mini-link {
-    padding: 9px 12px;
-    font-size: 13px;
+  .project-body .chips{
+    gap:8px;
   }
 
-  /* Carousel arrows */
-  #projects .carousel-btn {
-    width: 42px;
-    height: 42px;
-    top: 95px;
-    transform: none;
+  .project-body .chip{
+    padding:7px 10px;
+    font-size:12px;
+    border-radius:10px;
   }
 
-  #projects .carousel-btn:hover {
-    transform: scale(1.05);
+  .project-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:16px;
   }
 
-  #projects .carousel-btn.left {
-    left: 6px;
+  .project-links .mini-link{
+    padding:9px 12px;
+    font-size:13px;
   }
 
-  #projects .carousel-btn.right {
-    right: 6px;
+  /*
+    On mobile, keep project arrows on the image area
+    instead of allowing them to overlap the description.
+  */
+  #projects .carousel-btn{
+    width:42px;
+    height:42px;
+    top:clamp(58px, 16vw, 78px);
+    transform:translateY(-50%);
+    background:rgba(7,16,25,.68);
+    border-color:rgba(103,195,189,.28);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
   }
 
-  /* Dots */
-  #projects .dots {
-    margin-top: 12px;
+  #projects .carousel-btn.left{
+    left:6px;
+  }
+
+  #projects .carousel-btn.right{
+    right:6px;
+  }
+
+  #projects .carousel-btn:hover{
+    transform:translateY(-50%) scale(1.05);
+  }
+
+  #projects .dots{
+    gap:8px;
+    margin-top:12px;
+  }
+
+  #projects .dot{
+    width:10px;
+    height:10px;
+  }
+}
+
+/* Small phones */
+@media (max-width:390px){
+
+  #projects .container{
+    padding-left:10px;
+    padding-right:10px;
+  }
+
+  .project-body{
+    padding:18px 16px 20px;
+  }
+
+  .project-body h3{
+    font-size:21px;
+  }
+
+  .project-body p{
+    font-size:14px;
+    line-height:1.55;
+  }
+
+  .project-body .chip{
+    padding:6px 9px;
+    font-size:11px;
+  }
+
+  .project-links .mini-link{
+    padding:8px 10px;
+    font-size:12px;
+  }
+
+  #projects .carousel-btn{
+    width:38px;
+    height:38px;
+    top:clamp(52px, 15.5vw, 62px);
+  }
+}
+
+
+/* ==========================================================================
+   PROJECTS — FINAL OVERRIDES V3
+   Fixes:
+   1) <picture> wrappers not filling project image area
+   2) mobile carousel arrows overlapping project text
+   3) mobile back-to-top button covering project controls
+   ========================================================================== */
+
+.project-img picture{
+  display:block;
+  width:100%;
+  height:100%;
+}
+
+.project-img picture img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center;
+}
+
+/* Keep arrows visually consistent on desktop */
+#projects .carousel-btn{
+  z-index:20;
+}
+
+/* Mobile */
+@media (max-width:600px){
+
+  /* Full-width 3:1 banner even when HTML uses <picture> */
+  .project-img,
+  .project-img picture{
+    width:100%;
+    height:auto;
+    aspect-ratio:3 / 1;
+  }
+
+  .project-img img,
+  .project-img picture img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+  }
+
+  /*
+    .carousel is the positioning context.
+    For a 3:1 banner, image center = card width / 6.
+    This forces arrows onto the image instead of the project description.
+  */
+  #projects .carousel-btn{
+    top:calc((100vw - 28px) / 6) !important;
+    width:40px !important;
+    height:40px !important;
+    transform:translateY(-50%) !important;
+    background:rgba(7,16,25,.78);
+    border:1px solid rgba(103,195,189,.34);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+  }
+
+  #projects .carousel-btn.left{
+    left:4px !important;
+  }
+
+  #projects .carousel-btn.right{
+    right:4px !important;
+  }
+
+  #projects .carousel-btn:hover{
+    transform:translateY(-50%) scale(1.05) !important;
+  }
+
+  /* Slightly smaller floating back-to-top button on phones */
+  .back-to-top{
+    width:48px;
+    height:48px;
+    right:14px;
+    bottom:14px;
+  }
+}
+
+/* Small phones */
+@media (max-width:390px){
+  #projects .carousel-btn{
+    top:calc((100vw - 20px) / 6) !important;
+    width:36px !important;
+    height:36px !important;
   }
 }
