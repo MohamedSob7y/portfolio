@@ -1251,3 +1251,49 @@ body.light .mini-link{
     height:36px !important;
   }
 }
+
+
+/*==================================================*/
+/* .timeline-org {
+  display: flex !important;
+  align-items: center !important;
+  flex-direction: row !important; 
+  gap: 10px;
+  margin-top: 6px;
+  margin-bottom: 10px;
+}
+
+.timeline-logo {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+.timeline-icon {
+  font-size: 18px;
+  color: #00d2ff;
+}
+
+
+.cert-top-bg {
+  position: relative;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.55), 
+      rgba(0, 0, 0, 0.75)
+    ), 
+    var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+
+.cert-top-inner {
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+} */
