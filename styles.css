@@ -597,7 +597,7 @@ body.light .footer{border-top:1px solid rgba(15,26,45,.10); background: rgba(245
   background: linear-gradient(135deg, #f59e0b, #f97316); /* أصفر → برتقالي */
 }
 
-/* ===== Light mode contrast and visibility refinement ===== */
+
 body.light{
   --bg0:#eef3f5;
   --bg1:#dfe8ec;
@@ -685,7 +685,7 @@ body.light #particles{
   opacity:.45;
 }
 
-/* ===== Vivid professional refinement: stronger depth, contrast and accents ===== */
+
 :root{
   --bg0:#071019;
   --bg1:#0b1824;
@@ -795,7 +795,7 @@ body{
 .orb-3{background:radial-gradient(circle at 30% 30%,rgba(38,167,182,.20),transparent 64%);}
 #particles{opacity:.72;}
 
-/* Light mode: crisp, modern and clearly visible */
+
 body.light{
   --bg0:#edf5f7;
   --bg1:#dce9ee;
@@ -856,7 +856,7 @@ body.light .nav-link{color:rgba(18,40,49,.88);}
 body.light .orb{opacity:.26;}
 body.light #particles{opacity:.38;}
 
-/* ===== Light Mode Contrast Fix ===== */
+
 body.light{
   --bg0:#eef4f6;
   --bg1:#dfe9ed;
@@ -938,21 +938,14 @@ body.light .mini-link{
 }
 
 
-/* ==========================================================================
-   PROJECTS — FINAL RESPONSIVE STYLES
-   ========================================================================== */
 
-/* Desktop project card */
 .project-card{
   width:min(820px, 100%);
   flex:0 0 100%;
   overflow:hidden;
 }
 
-/*
-  All project banners should be exported as 1800x600 (3:1).
-  This keeps them full-width with no crop and no side gaps.
-*/
+
 .project-img{
   width:100%;
   aspect-ratio:3 / 1;
@@ -1083,10 +1076,7 @@ body.light .mini-link{
     font-size:13px;
   }
 
-  /*
-    On mobile, keep project arrows on the image area
-    instead of allowing them to overlap the description.
-  */
+ 
   #projects .carousel-btn{
     width:42px;
     height:42px;
@@ -1121,7 +1111,7 @@ body.light .mini-link{
   }
 }
 
-/* Small phones */
+
 @media (max-width:390px){
 
   #projects .container{
@@ -1160,13 +1150,6 @@ body.light .mini-link{
 }
 
 
-/* ==========================================================================
-   PROJECTS — FINAL OVERRIDES V3
-   Fixes:
-   1) <picture> wrappers not filling project image area
-   2) mobile carousel arrows overlapping project text
-   3) mobile back-to-top button covering project controls
-   ========================================================================== */
 
 .project-img picture{
   display:block;
@@ -1182,15 +1165,15 @@ body.light .mini-link{
   object-position:center;
 }
 
-/* Keep arrows visually consistent on desktop */
+
 #projects .carousel-btn{
   z-index:20;
 }
 
-/* Mobile */
+
 @media (max-width:600px){
 
-  /* Full-width 3:1 banner even when HTML uses <picture> */
+ 
   .project-img,
   .project-img picture{
     width:100%;
@@ -1206,11 +1189,7 @@ body.light .mini-link{
     object-position:center;
   }
 
-  /*
-    .carousel is the positioning context.
-    For a 3:1 banner, image center = card width / 6.
-    This forces arrows onto the image instead of the project description.
-  */
+
   #projects .carousel-btn{
     top:calc((100vw - 28px) / 6) !important;
     width:40px !important;
@@ -1234,7 +1213,6 @@ body.light .mini-link{
     transform:translateY(-50%) scale(1.05) !important;
   }
 
-  /* Slightly smaller floating back-to-top button on phones */
   .back-to-top{
     width:48px;
     height:48px;
@@ -1243,7 +1221,7 @@ body.light .mini-link{
   }
 }
 
-/* Small phones */
+
 @media (max-width:390px){
   #projects .carousel-btn{
     top:calc((100vw - 20px) / 6) !important;
@@ -1252,48 +1230,791 @@ body.light .mini-link{
   }
 }
 
-
-/*==================================================*/
-/* .timeline-org {
-  display: flex !important;
-  align-items: center !important;
-  flex-direction: row !important; 
-  gap: 10px;
-  margin-top: 6px;
-  margin-bottom: 10px;
+.timeline {
+  position: relative;
+  padding-left: 30px;
 }
+
+
+
+
+.timeline-line {
+  position: absolute;
+  left: 8px;
+  top: 12px;
+  bottom: 12px;
+
+  width: 2px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(85, 214, 207, 0.12),
+      rgba(85, 214, 207, 0.85),
+      rgba(77, 163, 255, 0.35)
+    );
+
+  box-shadow:
+    0 0 16px rgba(85, 214, 207, 0.25);
+
+  border-radius: 50px;
+}
+
+
+
+
+.timeline-item {
+  position: relative;
+
+  padding: 26px 28px;
+
+  margin-bottom: 22px;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+
+
+.timeline-item::after {
+  content: "";
+
+  position: absolute;
+
+  width: 280px;
+  height: 180px;
+
+  top: -100px;
+  right: -100px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(85, 214, 207, 0.09),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+
+
+
+.timeline-item:hover {
+  transform: translateY(-3px);
+
+  border-color:
+    rgba(85, 214, 207, 0.32);
+
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.42),
+    0 0 20px rgba(85, 214, 207, 0.08);
+}
+
+
+
+.timeline-dot {
+  position: absolute;
+
+  left: -28px;
+  top: 31px;
+
+  width: 16px;
+  height: 16px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--accent),
+      var(--accent2)
+    );
+
+  border:
+    4px solid #0b1824;
+
+  box-shadow:
+    0 0 0 4px rgba(85, 214, 207, 0.08),
+    0 0 20px rgba(85, 214, 207, 0.4);
+
+  z-index: 3;
+}
+
+
+
+
+.timeline-head {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 20px;
+
+  margin-bottom: 15px;
+}
+
+
+.timeline-title-wrap {
+  flex: 1;
+}
+
+
+.timeline-title-wrap h3 {
+  margin: 6px 0 0;
+
+  font-size: 23px;
+
+  line-height: 1.35;
+
+  color: var(--text);
+}
+
+
+
+
+.timeline-type {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 5px 10px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.6px;
+
+  text-transform: uppercase;
+
+  color: var(--accent);
+
+  background:
+    rgba(85, 214, 207, 0.08);
+
+  border:
+    1px solid rgba(85, 214, 207, 0.18);
+}
+
+
+
+.timeline-date {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  white-space: nowrap;
+
+  padding: 8px 12px;
+
+  border-radius: 12px;
+
+  color: var(--accent);
+
+  background:
+    rgba(85, 214, 207, 0.07);
+
+  border:
+    1px solid rgba(85, 214, 207, 0.13);
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+
+.timeline-date i {
+  font-size: 13px;
+}
+
+
+
+
+.timeline-org {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 9px 13px 9px 9px;
+
+  margin-bottom: 5px;
+
+  border-radius: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.07);
+}
+
+
+
 
 .timeline-logo {
-  width: 22px;
-  height: 22px;
+  width: 40px;
+  height: 40px;
+
+  padding: 5px;
+
   object-fit: contain;
-  display: inline-block;
-  vertical-align: middle;
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.15);
+
+  flex-shrink: 0;
 }
 
 
-.timeline-icon {
-  font-size: 18px;
-  color: #00d2ff;
+
+
+.timeline-org-info {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
 }
+
+
+.timeline-org-info strong {
+  font-size: 14px;
+
+  font-weight: 700;
+
+  color: var(--text);
+}
+
+
+.timeline-org-info span {
+  font-size: 12px;
+
+  color: var(--muted);
+}
+
+
+
+.timeline-item > p {
+  margin:
+    15px 0 0;
+
+  color: var(--muted);
+
+  font-size: 15px;
+
+  line-height: 1.75;
+
+  max-width: 900px;
+}
+
+
+
+
+.timeline-tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 16px;
+}
+
+
+.timeline-tags span {
+  padding: 6px 10px;
+
+  border-radius: 9px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  color: var(--accent);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(85, 214, 207, 0.09),
+      rgba(77, 163, 255, 0.045)
+    );
+
+  border:
+    1px solid rgba(85, 214, 207, 0.14);
+}
+
+
+
+
+body.light .timeline-dot {
+  border-color: #eef4f6;
+}
+
+
+body.light .timeline-item:hover {
+  box-shadow:
+    0 24px 55px rgba(31, 70, 84, 0.18);
+}
+
+
+body.light .timeline-org {
+  background:
+    rgba(255, 255, 255, 0.48);
+
+  border-color:
+    rgba(31, 72, 86, 0.12);
+}
+
+
+body.light .timeline-date {
+  background:
+    rgba(17, 143, 139, 0.07);
+
+  border-color:
+    rgba(17, 143, 139, 0.15);
+}
+
+
+
+
+@media (max-width: 760px) {
+
+  .timeline {
+    padding-left: 24px;
+  }
+
+
+  .timeline-item {
+    padding:
+      22px 20px;
+  }
+
+
+  .timeline-head {
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+
+  .timeline-title-wrap h3 {
+    font-size: 21px;
+  }
+
+
+  .timeline-date {
+    align-self: flex-start;
+  }
+
+
+  .timeline-dot {
+    left: -23px;
+
+    top: 28px;
+  }
+
+}
+
+
+@media (max-width: 520px) {
+
+  .timeline-item {
+    padding:
+      20px 17px;
+  }
+
+
+  .timeline-title-wrap h3 {
+    font-size: 19px;
+  }
+
+
+  .timeline-org {
+    width: 100%;
+
+    padding: 9px;
+  }
+
+
+  .timeline-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+
+  .timeline-org-info strong {
+    font-size: 13px;
+  }
+
+
+  .timeline-org-info span {
+    font-size: 11px;
+  }
+
+
+  .timeline-item > p {
+    font-size: 14px;
+
+    line-height: 1.65;
+  }
+
+
+  .timeline-tags {
+    gap: 6px;
+  }
+
+
+  .timeline-tags span {
+    font-size: 10px;
+
+    padding: 6px 8px;
+  }
+
+}
+
 
 
 .cert-top-bg {
   position: relative;
-  background-image: linear-gradient(
-      rgba(0, 0, 0, 0.55), 
-      rgba(0, 0, 0, 0.75)
-    ), 
+
+  min-height: 220px;
+
+  display: grid;
+  place-items: center;
+
+  background-image:
+    linear-gradient(
+      135deg,
+      rgba(5, 18, 28, 0.70),
+      rgba(9, 31, 45, 0.82)
+    ),
     var(--bg-image);
+
   background-size: cover;
+
   background-position: center;
+
   background-repeat: no-repeat;
+
   overflow: hidden;
+}
+
+
+
+
+.cert-top-bg::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(85, 214, 207, 0.22),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(77, 163, 255, 0.18),
+      transparent 45%
+    );
+
+  pointer-events: none;
 }
 
 
 .cert-top-inner {
   position: relative;
+
   z-index: 2;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-} */
+
+  max-width: 760px;
+
+  padding: 25px;
+
+  text-align: center;
+
+  color: white;
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.65);
+}
+
+
+.cert-top-inner i {
+  font-size: 50px;
+
+  margin-bottom: 13px;
+
+  opacity: 0.95;
+}
+
+
+.cert-top-inner h3 {
+  margin: 0;
+
+  font-size: 26px;
+
+  line-height: 1.3;
+}
+
+
+.cert-top-inner p {
+  margin:
+    9px 0 0;
+
+  font-size: 14px;
+
+  opacity: 0.9;
+}
+
+
+.cert-top-bg {
+  position: relative;
+
+  height: 240px;
+
+  display: grid;
+  place-items: center;
+
+  background-image:
+    linear-gradient(
+      135deg,
+      rgba(5, 17, 27, 0.76),
+      rgba(7, 28, 43, 0.86)
+    ),
+    var(--bg-image);
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+
+
+
+
+.cert-top-bg::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(85, 214, 207, 0.22),
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 85% 90%,
+      rgba(77, 163, 255, 0.20),
+      transparent 45%
+    );
+
+  pointer-events: none;
+}
+
+
+
+
+.cert-top-bg::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(4, 13, 21, 0.05),
+      rgba(4, 13, 21, 0.30)
+    );
+
+  pointer-events: none;
+}
+
+
+
+
+.cert-top-inner {
+  position: relative;
+
+  z-index: 3;
+
+  width: 100%;
+
+  max-width: 760px;
+
+  padding: 25px 30px;
+
+  text-align: center;
+
+  color: #ffffff;
+}
+.cert-top-inner i {
+  display: block;
+
+  margin-bottom: 15px;
+
+  font-size: 48px;
+
+  color: #ffffff;
+
+  filter:
+    drop-shadow(
+      0 4px 10px rgba(0, 0, 0, 0.35)
+    );
+}
+
+
+.cert-top-inner h3 {
+  margin: 0;
+
+  font-size: 27px;
+
+  font-weight: 800;
+
+  line-height: 1.3;
+
+  text-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.7);
+}
+.cert-top-inner p {
+  margin: 10px 0 0;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color:
+    rgba(255, 255, 255, 0.90);
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.7);
+}
+.cert-body {
+  padding: 24px 26px 27px;
+}
+.cert-body > .muted {
+  margin:
+    0 0 16px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+.cert-body .chips {
+  margin-bottom: 18px;
+}
+.cert-body .mini-link {
+  margin-top: 3px;
+}
+.grad-6 {
+  height: 240px;
+
+  display: grid;
+  place-items: center;
+
+  background:
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(255, 255, 255, 0.15),
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #d96529,
+      #f59e0b
+    );
+
+  position: relative;
+
+  overflow: hidden;
+}
+@media (max-width: 600px) {
+
+  .cert-top-bg,
+  .grad-6 {
+    height: 215px;
+  }
+
+
+  .cert-top-inner {
+    padding:
+      20px 24px;
+  }
+
+
+  .cert-top-inner i {
+    font-size: 40px;
+
+    margin-bottom: 12px;
+  }
+
+
+  .cert-top-inner h3 {
+    font-size: 21px;
+
+    line-height: 1.3;
+  }
+
+
+  .cert-top-inner p {
+    font-size: 12px;
+  }
+
+
+  .cert-body {
+    padding:
+      20px 18px 22px;
+  }
+
+}
+
+
+@media (max-width: 390px) {
+
+  .cert-top-bg,
+  .grad-6 {
+    height: 205px;
+  }
+
+
+  .cert-top-inner h3 {
+    font-size: 19px;
+  }
+
+
+  .cert-top-inner i {
+    font-size: 36px;
+  }
+
+}
+
+
+
+
+
